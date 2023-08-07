@@ -11,16 +11,20 @@ body {
 .new-visit {
     height: 40px;
     margin: 10px 0 10px 10px;
-    background: #419DB4;
     font-size: 15px;
     line-height: 19px;
     text-transform: uppercase;
-    color: #FFF;
+    color: black;
     display: inline-block;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.5s;
     border: none;
+}
+
+.new-visit:hover {
+    background: #007DF2;
+    color: white;
 }
 
 .modal-container {
@@ -129,25 +133,35 @@ body {
 .create-btn {
     height: 35px;
     width: 130px;
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 21.86px;
-    background-color: #007DF2;
+    color: black;
+    font-size: 15px;
+    line-height: 19px;
+    cursor: pointer;
+    transition: background-color 0.5s;
     border: none;
     border-radius: 8px;
+}
+
+.create-btn:hover {
+    background-color: #007DF2;
+    color: white;
 }
 
 .close-btn {
     height: 35px;
     width: 130px;
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 21.86px;
-    background-color: #444444;
+    color: black;
+    font-size: 15px;
+    line-height: 19px;
+    cursor: pointer;
+    transition: background-color 0.5s;
     border: none;
     border-radius: 8px;
+}
+
+.close-btn:hover {
+    background-color: #444444;
+    color: white;
 }
 
 .card {
