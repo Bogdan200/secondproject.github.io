@@ -1,33 +1,16 @@
+* {
+    font-family: 'Manrope', sans-serif;
+}
+
 body {
     margin: 0;
-}
-.container {
-    background-color: #DADADC;
-}
-.container-content {
-    display: flex;
-    height: 130px;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo {
-    width: 100px;
-    height: 101px;
-    margin-left: 10%;   
+    max-width: 1280px;
 }
 
-.desc {
-    margin-right: 45%;
-    font-size: 15px;
-    line-height: 19px;
-    text-transform: uppercase;
-    color: #419DB4;
-}
 
-.enter {
-    width: 90px;
+.new-visit {
     height: 40px;
-    margin-right: 10%;
+    margin: 10px 0 10px 10px;
     background: #419DB4;
     font-size: 15px;
     line-height: 19px;
@@ -38,4 +21,135 @@ body {
     cursor: pointer;
     transition: background-color 0.5s;
     border: none;
+}
+
+.modal-container {
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.doctors {
+    height: 30px;
+    color: #777;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+.purpose {
+    height: 30px;
+    color: #777;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+.description {
+    height: 30px;
+    color: #777;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+.name-input {
+    height: 30px;
+    color: #777;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+.pressure {
+    height: 30px;
+    color: #777;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+.bmi {
+    height: 30px;
+    color: #777;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+.heart-diseases {
+    height: 30px;
+    color: #777;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+.age-input {
+    height: 30px;
+    color: #777;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+.last-visit { 
+    height: 30px;
+    color: #777;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+.urgency {
+    height: 30px;
+    color: #777;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+.create-btn {
+    height: 35px;
+    width: 130px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21.86px;
+    background-color: #007DF2;
+    border: none;
+    border-radius: 8px;
+}
+
+.close-btn {
+    height: 35px;
+    width: 130px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21.86px;
+    background-color: #444444;
+    border: none;
+    border-radius: 8px;
+}
+
+.card {
+    margin-left: 10px;
 }
