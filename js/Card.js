@@ -4,6 +4,7 @@ const token = "ae5a679d-9651-4426-93a4-29dc9de9d0e4"
 
 // Створюємо випадаючий список з опціями лікарів
 const doctorSelect = document.createElement("select");
+doctorSelect.classList.add("doctors")
 doctorSelect.innerHTML = `
     <option value="Кардіолог">Кардіолог</option>
     <option value="Стоматолог">Стоматолог</option>
@@ -13,11 +14,14 @@ doctorSelect.innerHTML = `
 // Створюємо поля для введення даних
 const purposeInput = document.createElement("input");
 purposeInput.type = "text";
+purposeInput.classList.add("purpose")
 purposeInput.placeholder = "Мета візиту";
 const descriptionInput = document.createElement("input");
 descriptionInput.type = "text";
+descriptionInput.classList.add("description")
 descriptionInput.placeholder = "Короткий опис візиту";
 const urgencySelect = document.createElement("select");
+urgencySelect.classList.add("urgency")
 urgencySelect.innerHTML = `
     <option value="Звичайна">Звичайна</option>
     <option value="Пріоритетна">Пріоритетна</option>
@@ -25,33 +29,42 @@ urgencySelect.innerHTML = `
 `;
 const nameInput = document.createElement("input");
 nameInput.type = "text";
+nameInput.classList.add("name-input")
 nameInput.placeholder = "ПІБ";
 
 // Створюємо поля для введення даних, що відповідають кожному лікарю
 const pressureInput = document.createElement("input");
 pressureInput.type = "number";
+pressureInput.classList.add("pressure")
 pressureInput.placeholder = "Звичайний тиск";
 const bmiInput = document.createElement("input");
 bmiInput.type = "number";
+bmiInput.classList.add("bmi")
 bmiInput.placeholder = "Індекс маси тіла";
 const heartDiseasesInput = document.createElement("input");
 heartDiseasesInput.type = "text";
+heartDiseasesInput.classList.add("heart-diseases")
 heartDiseasesInput.placeholder = "Перенесені захворювання серцево-судинної системи";
 const ageInput = document.createElement("input");
 ageInput.type = "number";
+ageInput.classList.add("age-input")
 ageInput.placeholder = "Вік";
 const lastVisitDateInput = document.createElement("input");
 lastVisitDateInput.type = "date";
+lastVisitDateInput.classList.add("last-visit")
 lastVisitDateInput.placeholder = "Дата останнього відвідування";
 
 // Створюємо кнопки
 const createBtn = document.createElement("button");
+createBtn.classList.add("create-btn")
 createBtn.textContent = "Створити";
 const closeBtn = document.createElement("button");
+closeBtn.classList.add("close-btn")
 closeBtn.textContent = "Закрити";
 
 // Створюємо модальне вікно та додаємо всі елементи до нього
 const modal = document.createElement("div");
+modal.classList.add("modal-container")
 modal.style.display = "none";
 modal.appendChild(doctorSelect);
 modal.appendChild(purposeInput);
@@ -68,7 +81,9 @@ modal.appendChild(closeBtn);
 
 // Функція, що показує модальне вікно
 function showModal() {
-    modal.style.display = "block";
+    modal.style.display = "flex";
+    modal.style.flexWrap = "wrap";
+    
 }
 
 // Функція, що закриває модальне вікно
@@ -103,6 +118,7 @@ function handleDoctorSelect() {
 
 // Створюємо кнопку «Відкрити модальний».
 const openModalBtn = document.createElement("button");
+openModalBtn.classList.add("new-visit")
 openModalBtn.textContent = "Створити візит";
 document.body.appendChild(openModalBtn);
 
@@ -141,17 +157,17 @@ function createCard(visitData) {
     const card = document.createElement("div");
     card.classList.add("card");
         card.innerHTML = `
-        <h3>${visitData.doctor}</h3>
-        <p><strong>Мета візиту:</strong> ${visitData.purpose}</p>
-        <p><strong>Короткий опис візиту:</strong> ${visitData.description}</p>
-        <p><strong>Терміновість:</strong> ${visitData.urgency}</p>
-        <p><strong>ПІБ:</strong> ${visitData.name}</p>
-        <p><strong>Інформація для лікаря:</strong></p>
-        ${visitData.doctor === "Кардіолог" ? `<p><strong>Звичайний тиск:</strong> ${visitData.pressure}</p>` : ""}
-        ${visitData.doctor === "Кардіолог" ? `<p><strong>Індекс маси тіла:</strong> ${visitData.bmi}</p>` : ""}
-        ${visitData.doctor === "Кардіолог" ? `<p><strong>Перенесені захворювання серцево-судинної системи:</strong> ${visitData.heartDiseases}</p>` : ""}
-        ${visitData.doctor === "Кардіолог" || visitData.doctor === "Терапевт" ? `<p><strong>Вік:</strong> ${visitData.age}</p>` : ""}
-        ${visitData.doctor === "Стоматолог" ? `<p><strong>Дата останнього відвідування:</strong> ${visitData.lastVisitDate}</p>` : ""}
+        <h3 class="visit-doctor">${visitData.doctor}</h3>
+        <p class="visit-purpose"><strong>Мета візиту:</strong> ${visitData.purpose}</p>
+        <p class="visit-description"><strong>Короткий опис візиту:</strong> ${visitData.description}</p>
+        <p class="visit-urgency"><strong>Терміновість:</strong> ${visitData.urgency}</p>
+        <p class="visit-name"><strong>ПІБ:</strong> ${visitData.name}</p>
+        <p class="visit-info"><strong>Інформація для лікаря:</strong></p>
+        ${visitData.doctor === "Кардіолог" ? `<p class="visit-pressure"><strong>Звичайний тиск:</strong> ${visitData.pressure}</p>` : ""}
+        ${visitData.doctor === "Кардіолог" ? `<p class="visit-bmi"><strong>Індекс маси тіла:</strong> ${visitData.bmi}</p>` : ""}
+        ${visitData.doctor === "Кардіолог" ? `<p class="visit-heartdiseases"><strong>Перенесені захворювання серцево-судинної системи:</strong> ${visitData.heartDiseases}</p>` : ""}
+        ${visitData.doctor === "Кардіолог" || visitData.doctor === "Терапевт" ? `<p class="visit-age"><strong>Вік:</strong> ${visitData.age}</p>` : ""}
+        ${visitData.doctor === "Стоматолог" ? `<p class="visit-last"><strong>Дата останнього відвідування:</strong> ${visitData.lastVisitDate}</p>` : ""}
     `;
     document.body.appendChild(card);
 }
