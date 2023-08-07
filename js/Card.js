@@ -1,5 +1,5 @@
 import { API_ENDPOINT } from "./Visit.js"
-const token = "Your token is: ae5a679d-9651-4426-93a4-29dc9de9d0e4"
+const token = "ae5a679d-9651-4426-93a4-29dc9de9d0e4"
 
 
 // Створюємо випадаючий список з опціями лікарів
