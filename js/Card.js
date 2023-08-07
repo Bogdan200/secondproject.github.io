@@ -141,7 +141,7 @@ function createCard(visitData) {
     const card = document.createElement("div");
     card.classList.add("card");
         card.innerHTML = `
-        <h3>${visitData.doctor} Visit</h3>
+        <h3>${visitData.doctor}</h3>
         <p><strong>Мета візиту:</strong> ${visitData.purpose}</p>
         <p><strong>Короткий опис візиту:</strong> ${visitData.description}</p>
         <p><strong>Терміновість:</strong> ${visitData.urgency}</p>
