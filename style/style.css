@@ -165,5 +165,48 @@ body {
 }
 
 .card {
-    margin-left: 10px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 400px;
+}
+
+.visit-name {
+    font-size: x-large;
+    font-weight: bold;
+    margin: 0;
+}
+.visit-doctor {
+    font-weight: 600;
+    font-size: large;
+}
+.visit-purpose {
+    font-weight: 300;
+}
+.visit-description {
+    font-weight: 300;
+}
+.visit-urgency {
+    font-weight: 300;
+}
+.visit-info {
+    font-weight: 300;
+}
+.visit-pressure {
+    font-weight: 300;
+}
+.visit-bmi {
+    font-weight: 300;
+}
+.visit-heartdiseases {
+    font-weight: 300;
+}
+.visit-age {
+    font-weight: 300;
+}
+.visit-last {
+    font-weight: 300;
 }

@@ -157,17 +157,17 @@ function createCard(visitData) {
     const card = document.createElement("div");
     card.classList.add("card");
         card.innerHTML = `
-        <h3 class="visit-doctor">${visitData.doctor}</h3>
-        <p class="visit-purpose"><strong>Мета візиту:</strong> ${visitData.purpose}</p>
-        <p class="visit-description"><strong>Короткий опис візиту:</strong> ${visitData.description}</p>
-        <p class="visit-urgency"><strong>Терміновість:</strong> ${visitData.urgency}</p>
-        <p class="visit-name"><strong>ПІБ:</strong> ${visitData.name}</p>
-        <p class="visit-info"><strong>Інформація для лікаря:</strong></p>
-        ${visitData.doctor === "Кардіолог" ? `<p class="visit-pressure"><strong>Звичайний тиск:</strong> ${visitData.pressure}</p>` : ""}
-        ${visitData.doctor === "Кардіолог" ? `<p class="visit-bmi"><strong>Індекс маси тіла:</strong> ${visitData.bmi}</p>` : ""}
-        ${visitData.doctor === "Кардіолог" ? `<p class="visit-heartdiseases"><strong>Перенесені захворювання серцево-судинної системи:</strong> ${visitData.heartDiseases}</p>` : ""}
-        ${visitData.doctor === "Кардіолог" || visitData.doctor === "Терапевт" ? `<p class="visit-age"><strong>Вік:</strong> ${visitData.age}</p>` : ""}
-        ${visitData.doctor === "Стоматолог" ? `<p class="visit-last"><strong>Дата останнього відвідування:</strong> ${visitData.lastVisitDate}</p>` : ""}
+        <h3 class="visit-name"><strong>Пацієнт:</strong> ${visitData.name}</h3>
+        <p class="visit-doctor">Лікар: ${visitData.doctor}</p>
+        <p class="visit-purpose"><strong class="visit-purpose">Мета візиту:</strong> ${visitData.purpose}</p>
+        <p class="visit-description"><strong class="visit-description">Короткий опис візиту:</strong> ${visitData.description}</p>
+        <p class="visit-urgency"><strong class="visit-urgency">Терміновість:</strong> ${visitData.urgency}</p>
+        <p class="visit-info"><strong class="visit-info">Інформація для лікаря:</strong></p>
+        ${visitData.doctor === "Кардіолог" ? `<p class="visit-pressure"><strong class="visit-pressure">Звичайний тиск:</strong> ${visitData.pressure}</p>` : ""}
+        ${visitData.doctor === "Кардіолог" ? `<p class="visit-bmi"><strong class="visit-bmi">Індекс маси тіла:</strong> ${visitData.bmi}</p>` : ""}
+        ${visitData.doctor === "Кардіолог" ? `<p class="visit-heartdiseases"><strong class="visit-heartdiseases">Перенесені захворювання серцево-судинної системи:</strong> ${visitData.heartDiseases}</p>` : ""}
+        ${visitData.doctor === "Кардіолог" || visitData.doctor === "Терапевт" ? `<p class="visit-age"><strong class="visit-age">Вік:</strong> ${visitData.age}</p>` : ""}
+        ${visitData.doctor === "Стоматолог" ? `<p class="visit-last"><strong class="visit-last">Дата останнього відвідування:</strong> ${visitData.lastVisitDate}</p>` : ""}
     `;
     document.body.appendChild(card);
 }
