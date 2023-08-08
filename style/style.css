@@ -144,38 +144,14 @@ body {
     font-size: large;
 }
 
-.visit-purpose {
-    font-weight: 300;
-}
-
-.visit-description {
-    font-weight: 300;
-}
-
-.visit-urgency {
-    font-weight: 300;
-}
-
-.visit-info {
-    font-weight: 300;
-}
-
-.visit-pressure {
-    font-weight: 300;
-}
-
-.visit-bmi {
-    font-weight: 300;
-}
-
-.visit-heartdiseases {
-    font-weight: 300;
-}
-
-.visit-age {
-    font-weight: 300;
-}
-
+.visit-purpose,
+.visit-description,
+.visit-urgency,
+.visit-info,
+.visit-pressure,
+.visit-bmi,
+.visit-heartdiseases,
+.visit-age,
 .visit-last {
-    font-weight: 300;
+    font-weight: 500;
 }
