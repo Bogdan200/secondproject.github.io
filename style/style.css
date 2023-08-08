@@ -1,12 +1,11 @@
 * {
-    font-family: 'Manrope', sans-serif;
+    font-family: "Manrope", sans-serif;
 }
 
 body {
     margin: 0;
     max-width: 1280px;
 }
-
 
 .new-visit {
     height: 40px;
@@ -23,145 +22,105 @@ body {
 }
 
 .new-visit:hover {
-    background: #007DF2;
+    background: #007df2;
     color: white;
 }
 
 .modal-container {
-    gap: 10px;
-    margin-left: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
 }
 
-.doctors {
-    height: 30px;
-    color: #777;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    transition: all 0.5s ease;
-}
-
-.purpose {
-    height: 30px;
-    color: #777;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    transition: all 0.5s ease;
-}
-
-.description {
-    height: 30px;
-    color: #777;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    transition: all 0.5s ease;
-}
-
-.name-input {
-    height: 30px;
-    color: #777;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    transition: all 0.5s ease;
-}
-
-.pressure {
-    height: 30px;
-    color: #777;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    transition: all 0.5s ease;
-}
-
-.bmi {
-    height: 30px;
-    color: #777;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    transition: all 0.5s ease;
-}
-
-.heart-diseases {
-    height: 30px;
-    color: #777;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    transition: all 0.5s ease;
-}
-
-.age-input {
-    height: 30px;
-    color: #777;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    transition: all 0.5s ease;
-}
-
-.last-visit { 
-    height: 30px;
-    color: #777;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    transition: all 0.5s ease;
-}
-
+.doctors,
 .urgency {
-    height: 30px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
     color: #777;
-    font-size: 16px;
     border: 1px solid #ccc;
-    box-sizing: border-box;
+    border-radius: 4px;
     transition: all 0.5s ease;
+}
+
+.purpose,
+.description,
+.name-input,
+.pressure,
+.bmi,
+.heart-diseases,
+.age-input,
+.last-visit {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #777;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+}
+
+.modal-container {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
 .create-btn {
+    margin-left: 70px;
     height: 35px;
     width: 130px;
-    color: black;
+
     font-size: 15px;
     line-height: 19px;
     cursor: pointer;
     transition: background-color 0.5s;
     border: none;
     border-radius: 8px;
+    background-color: #007df2;
+    color: white;
 }
 
 .create-btn:hover {
-    background-color: #007DF2;
-    color: white;
+    color: black;
+    background-color: #e4e4e4;
 }
 
 .close-btn {
+    margin-left: 70px;
     height: 35px;
     width: 130px;
-    color: black;
     font-size: 15px;
     line-height: 19px;
     cursor: pointer;
     transition: background-color 0.5s;
     border: none;
     border-radius: 8px;
+    background-color: #444444;
+    color: white;
 }
 
 .close-btn:hover {
-    background-color: #444444;
-    color: white;
+    color: black;
+    background-color: #e4e4e4
 }
 
 .card {
@@ -179,34 +138,44 @@ body {
     font-weight: bold;
     margin: 0;
 }
+
 .visit-doctor {
     font-weight: 600;
     font-size: large;
 }
+
 .visit-purpose {
     font-weight: 300;
 }
+
 .visit-description {
     font-weight: 300;
 }
+
 .visit-urgency {
     font-weight: 300;
 }
+
 .visit-info {
     font-weight: 300;
 }
+
 .visit-pressure {
     font-weight: 300;
 }
+
 .visit-bmi {
     font-weight: 300;
 }
+
 .visit-heartdiseases {
     font-weight: 300;
 }
+
 .visit-age {
     font-weight: 300;
 }
+
 .visit-last {
     font-weight: 300;
 }
