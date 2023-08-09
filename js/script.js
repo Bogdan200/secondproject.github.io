@@ -94,7 +94,7 @@ class Input {
     error() {
         const errorSpan = document.createElement("span");
         errorSpan.classList.add('errSpan');
-        errorSpan.textContent = 'Неверно заполнено поле!';
+        errorSpan.textContent = 'Невірно заповнено поле!';
         if(!this.input.value.trim()) {
             if(this.input.nextElementSibling.classList.contains('errSpan')) {
                 this.input.classList.remove('errInput');
