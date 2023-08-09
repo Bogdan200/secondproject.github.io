@@ -1,0 +1,87 @@
+.album{
+    padding-top: 20px;
+}
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+
+.card {
+    display: inline-block;
+     width: 26%;
+    padding: 40px 20px 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(34, 60, 80, 0.2);
+    margin: 20px;
+    position: relative;
+    font-family: sans-serif;
+    word-wrap: break-word;
+}
+
+.card h3 {
+    font-size: 36px;
+    line-height: 54px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.card p {
+    color: rgb(31, 29, 29);
+    font-size: 20px;
+}
+
+.more-text{
+    background-color: #fcfcfc;
+    border-radius: 5px;
+    width: 200px;
+    margin-top: 10px;
+    padding: 7px 0;
+    font-size: 24px;
+    border: 1px solid #555555;
+    color: #555555;
+}
+.more-text:hover{
+    background-color: #555555;
+    color: #fcfcfc;
+}
+
+.hidden{
+    display: none;
+    background-color: #828282;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.card__btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 3px;
+    border: 1px solid #ffffff;
+    outline: none;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    filter: brightness(.9);
+}
+
+.card__btn:hover {
+    filter: brightness(1);
+}
+
+
+
+.card__edit {
+    right: 52px;
+    background-color: #2beccf;
+    background-image: url("../icons/pencil.png");
+}
+
+
+.card__delete {
+    background-color: #ef0b0b;
+    background-image: url("../icons/close-thick.png");
+}
