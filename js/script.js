@@ -233,7 +233,7 @@ function logInModal(e) {
     loginModal.insert(loginForm.create());
     loginForm.insert(loginEmail.create(), loginPassword.create(), loginSubmit.create());
 
-    loginModal.title('АВТОРИЗАЦИЯ', 'login-title');
+    loginModal.title('АВТОРИЗАЦІЯ', 'login-title');
     loginEmail.label('EMAIL', 'email-label');
     loginPassword.label('ПАРОЛЬ', 'password-label');
 
@@ -267,7 +267,7 @@ function authorization(data, ...optional) {
                 return response.text()
             }
             else {
-                throw new Error('Ошибка! Неверный email или пароль.')
+                throw new Error('Помилка! Невірний email або пароль.')
             }
         })
         .then(data => {
@@ -288,12 +288,6 @@ function changeButton(show, hide) {
 }
 
 
-
-
-
-
-
-
 //Отправка отредактированных данных на сервер
 function editData(data, id) {
     sendRequest(generalUrl + `/${id}`, method = 'PUT', data)
@@ -308,9 +302,6 @@ function editData(data, id) {
         })
         .catch(error => console.log(error.message));
 }
-
-
-
 
 //Получение данных и отправка на сервер
 function getCardData(data) {
@@ -332,18 +323,18 @@ function createFilter() {
 
     searchField.append(searchInput.create(), prioritySelect.create(), openDoneSelect.create(), searchButton.create());
 
-    searchInput.baseAttr('text', 'search-input', '', 'Поиск по названию');
+    searchInput.baseAttr('text', 'search-input', '', 'Почніть пошук');
     prioritySelect.baseAttr('priority');
-    prioritySelect.addOption('Все', 'All');
-    prioritySelect.addOption('Обычная', 'Обычная');
-    prioritySelect.addOption('Приоритетная', 'Приоритетная');
-    prioritySelect.addOption('Неотложная', 'Неотложная');
+    prioritySelect.addOption('Терміновість візиту', 'Urgency');
+    prioritySelect.addOption('Звичайна', 'Звичайна');
+    prioritySelect.addOption('Приорітетна', 'Приорітетна');
+    prioritySelect.addOption('Термінова', 'Термінова');
     prioritySelect.baseAttr('priority');
-    openDoneSelect.addOption('Все', 'All');
-    openDoneSelect.addOption('Open', 'Open');
-    openDoneSelect.addOption('Done', 'Done');
+    openDoneSelect.addOption('Статус візиту', 'All');
+    openDoneSelect.addOption('Запланований', 'Open');
+    openDoneSelect.addOption('Відбувся', 'Done');
     openDoneSelect.baseAttr('open-done');
-    searchButton.baseAttr('submit', 'search-btn', 'Поиск');
+    searchButton.baseAttr('submit', 'search-btn', 'Шукати');
 
     visitFilter();
 }
