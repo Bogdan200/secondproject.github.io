@@ -27,6 +27,7 @@ body {
 }
 
 .modal-container {
+    width: 500px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -36,6 +37,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 1000;
+    justify-content: space-between;
 }
 
 .doctors,
@@ -49,6 +51,7 @@ body {
     border-radius: 4px;
     transition: all 0.5s ease;
 }
+
 
 .purpose,
 .description,
@@ -85,10 +88,9 @@ body {
 }
 
 .create-btn {
-    margin-left: 70px;
     margin-top: 10px;
-    height: 35px;
-    width: 130px;
+    height: 40px;
+    width: 230px;
     font-size: 15px;
     line-height: 19px;
     cursor: pointer;
@@ -105,10 +107,9 @@ body {
 }
 
 .close-btn {
-    margin-left: 70px;
     margin-top: 10px;
-    height: 35px;
-    width: 130px;
+    height: 40px;
+    width: 230px;
     font-size: 15px;
     line-height: 19px;
     cursor: pointer;
