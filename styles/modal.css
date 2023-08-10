@@ -33,13 +33,13 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 45%;
 }
 
 .modal__close {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 18px;
     width: 28px;
     height: 28px;
     border-radius: 3px;
@@ -50,17 +50,20 @@
     background-position: center center;
     cursor: pointer;
     filter: brightness(.9);
-    background-color: #ef0b0b;
+    background-color: black;
     background-image: url("../icons/close-thick.png");
 }
 
 
 .modal__close:hover {
     filter: brightness(1);
+    background-color: #e4e4e4;
 }
 
 .modal__content-wrapper {
     margin-bottom: 30px;
+    margin-top: 20px;
+    margin-right: auto;
 }
 
 .modal__content-wrapper h3 {
@@ -98,13 +101,22 @@
 }
 
 .modal__cancel-btn {
-    background: #555555;
+    background: #444444;
 }
 
 .modal__confirm-btn {
-    background: #2beccf;
+    background: #007DF2;
 }
 
+.modal__cancel-btn:hover {
+    color: black;
+    background-color: #e4e4e4;
+}
+
+.modal__confirm-btn:hover {
+    color: black;
+    background-color: #e4e4e4;
+}
 
 .modal__content-wrapper form {
     display: flex;

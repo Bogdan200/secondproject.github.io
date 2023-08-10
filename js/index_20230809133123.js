@@ -95,7 +95,7 @@ class Card {
     render() {
         this.createEl();
         cardContainer.append(this.divCard)
-      
+    
     }
 }
 
@@ -111,7 +111,7 @@ class ArticleCard extends Card {
 
     createEl() {
         super.createEl()
-        this.moreContainer.innerText = 'Більше'
+        this.moreContainer.innerText = 'Більше інформації'
         this.titleContainer.innerText = `Пацієнт: ${this.title}`;
         this.textContainer.innerText = `Лікар: ${this.text}`;
         this.moreContainer.classList.add('more-text')
