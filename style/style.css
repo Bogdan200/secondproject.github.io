@@ -13,7 +13,8 @@ body {
     font-size: 15px;
     line-height: 19px;
     text-transform: uppercase;
-    color: black;
+    background: #007df2;
+    color: white; 
     display: inline-block;
     border-radius: 5px;
     cursor: pointer;
@@ -22,8 +23,8 @@ body {
 }
 
 .new-visit:hover {
-    background: #007df2;
-    color: white;
+    background-color: #EFEFEF;
+    color: black;
 }
 
 .modal-container {
