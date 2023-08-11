@@ -3,6 +3,25 @@ import { VisitCardiologist, VisitDentist, VisitTherapist } from "./Visit.js"
 
 const token = "ae5a679d-9651-4426-93a4-29dc9de9d0e4"
 
+fetch("https://ajax.test-danit.com/api/v2/cards", {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    },
+})
+    .then(response => response.json())
+    .then(response => console.log(response))
+
+    const id = 188021
+
+
+fetch(`https://ajax.test-danit.com/api/v2/cards/${id}`, {
+    method: 'DELETE',
+    headers: {
+        'Authorization': `Bearer ${token}`
+    },
+})
 
 // Створюємо випадаючий список з опціями лікарів
 const doctorSelect = document.createElement("select");
@@ -85,7 +104,7 @@ modal.appendChild(closeBtn);
 function showModal() {
     modal.style.display = "flex";
     modal.style.flexWrap = "wrap";
-    
+
 }
 
 // Функція, що закриває модальне вікно
@@ -120,7 +139,7 @@ function handleDoctorSelect() {
 
 // Створюємо кнопку «Відкрити модальний».
 const openModalBtn = document.createElement("button");
-openModalBtn.classList.add("new-visit") 
+openModalBtn.classList.add("new-visit")
 openModalBtn.textContent = "Створити візит";
 document.body.appendChild(openModalBtn);
 
@@ -158,7 +177,7 @@ document.body.appendChild(modal);
 function createCard(visitData) {
     const card = document.createElement("div");
     card.classList.add("card");
-        card.innerHTML = `
+    card.innerHTML = `
         <h3 class="visit-name"><strong>Пацієнт:</strong> ${visitData.name}</h3>
         <p class="visit-doctor">Лікар: ${visitData.doctor}</p>
         <p class="visit-purpose"><strong class="visit-purpose">Мета візиту:</strong> ${visitData.purpose}</p>
@@ -180,11 +199,11 @@ createBtn.addEventListener("click", () => {
     let visitData = {
 
     };
-    
+
 
     if (doctorSelect.value === "Кардіолог") {
-        visitData = new VisitCardiologist(doctorSelect.value, purposeInput.value, descriptionInput.value, urgencySelect.value, nameInput.value, pressureInput.value, bmiInput.value,heartDiseasesInput.value, ageInput.value)
-        
+        visitData = new VisitCardiologist(doctorSelect.value, purposeInput.value, descriptionInput.value, urgencySelect.value, nameInput.value, pressureInput.value, bmiInput.value, heartDiseasesInput.value, ageInput.value)
+
     } else if (doctorSelect.value === "Стоматолог") {
         visitData = new VisitDentist(doctorSelect.value, purposeInput.value, descriptionInput.value, urgencySelect.value, nameInput.value, lastVisitDateInput.value)
     } else if (doctorSelect.value === "Терапевт") {
