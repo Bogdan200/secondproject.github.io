@@ -1,5 +1,4 @@
-import { API_ENDPOINT } from "./Visit.js"
-import { VisitCardiologist, VisitDentist, VisitTherapist } from "./Visit.js"
+import { API_ENDPOINT, VisitCardiologist, VisitDentist, VisitTherapist } from "./Visit.js"
 
 const token = "ae5a679d-9651-4426-93a4-29dc9de9d0e4"
 
@@ -13,8 +12,7 @@ fetch("https://ajax.test-danit.com/api/v2/cards", {
     .then(response => response.json())
     .then(response => console.log(response))
 
-    const id = 188021
-
+let id = 188031;
 
 fetch(`https://ajax.test-danit.com/api/v2/cards/${id}`, {
     method: 'DELETE',
@@ -138,10 +136,8 @@ function handleDoctorSelect() {
 
 
 // Створюємо кнопку «Відкрити модальний».
-const openModalBtn = document.createElement("button");
-openModalBtn.classList.add("new-visit")
-openModalBtn.textContent = "Створити візит";
-document.body.appendChild(openModalBtn);
+
+const openModalBtn = document.getElementById("createVisitButton");
 
 // Додаємо обробники подій до кнопок та випадаючого списку
 openModalBtn.addEventListener("click", showModal);

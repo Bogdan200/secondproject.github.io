@@ -261,7 +261,7 @@ function getAuthorizationData(email, password, ...optional) {
 
 //Авторизация
 function authorization(data, ...optional) {
-    sendRequest(loginURL, method = 'POST', data)
+    sendRequest(loginURL,'POST', data)
         .then(response => {
             if(response.status >= 200 && response.status <= 399) {
                 return response.text()
@@ -286,7 +286,6 @@ function changeButton(show, hide) {
         show.classList.add('hide');
     }
 }
-
 
 //Отправка отредактированных данных на сервер
 function editData(data, id) {
@@ -336,9 +335,7 @@ function createFilter() {
     openDoneSelect.baseAttr('open-done');
     searchButton.baseAttr('submit', 'search-btn', 'Шукати');
 
-    visitFilter();
 }
-
 
 
 function sendRequest(url, method = 'GET', body) {
@@ -367,5 +364,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         createFilter();
     }
+});
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('exit').addEventListener('click', function() {
+        // Очистить данные авторизации (удалить токен из Session Storage)
+        sessionStorage.removeItem('authToken');
+        
+        // Перенаправить пользователя на страницу входа или на другую нужную страницу
+        window.location.href = 'login.html';
+    });
 });
 
