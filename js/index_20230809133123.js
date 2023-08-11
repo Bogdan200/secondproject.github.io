@@ -1,55 +1,22 @@
-const posts = [
-    {
-        id: 1,
-        title: "Сергей",
-        body: "Стоматолог"
+const token = "ae5a679d-9651-4426-93a4-29dc9de9d0e4"
+
+fetch("https://ajax.test-danit.com/api/v2/cards", {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
     },
-    {
-        id: 2,
-        title: "Андрей",
-        body: "Стоматолог"
-    },
-    {
-        id: 3,
-        title: "Max",
-        body: "Кардіолог"
-    },
-    {
-        id: 4,
-        title: "Богдан",
-        body: "Терапевт"
-    },
-    {
-        id: 5,
-        title: "Максим",
-        body: "Терапевт"
-    },
-    {
-        id: 6,
-        title: "Федор",
-        body: "Кардіолог"
-    },
-    {
-        id: 7,
-        title: "Григорий",
-        body: "Терапевт"
-    },
-    {
-        id: 8,
-        title: "Игорь",
-        body: "Кардіолог"
-    },
-    {
-        id: 9,
-        title: "Иван",
-        body: "Терапевт"
-    },
-    {
-        id: 10,
-        title: "Дима",
-        body: "Кардіолог"
-    }
-];
+    body: JSON.stringify({
+        title: 'Визит к кардиологу',
+        description: 'Плановый визит',
+        doctor: 'Cardiologist',
+        bp: '24',
+        age: 23,
+        weight: 70
+    })
+})
+    .then(response => response.json())
+    .then(response => console.log(response))
 
 
 
@@ -57,11 +24,11 @@ const cardContainer = document.querySelector('.container')
 
 function deleteContent() {
     console.log("delete action", this);
-    const submitHandler = ()=>{
+    const submitHandler = () => {
         this.divCard.remove()
-    } 
+    }
     new DeleteModal(this.title, submitHandler).render()
-    
+
 }
 
 function editContent() {
@@ -82,7 +49,7 @@ class Card {
     }
 
     createEl() {
-    
+
         this.divCard.classList.add('card');
         this.btnEdit.classList.add('card__btn', 'card__edit');
         this.btnDel.classList.add('card__btn', 'card__delete');
@@ -95,14 +62,14 @@ class Card {
     render() {
         this.createEl();
         cardContainer.append(this.divCard)
-    
+
     }
 }
 
 class ArticleCard extends Card {
     constructor(title, text, deleteF, editF, more) {
-        super(deleteF, editF); 
-        this.title = title; 
+        super(deleteF, editF);
+        this.title = title;
         this.text = text;
         this.titleContainer = document.createElement('h3');
         this.textContainer = document.createElement('p');
@@ -204,7 +171,4 @@ const textCard = new Card(deleteContent, editContent);
 // textCard.render(container);
 // const testArticle = new ArticleCard(posts[0].title, posts[0].body, deleteContent, editContent);
 
-posts.forEach((item) => {
-    new ArticleCard(item.title, item.body, deleteContent, editContent).render();
-})
 
