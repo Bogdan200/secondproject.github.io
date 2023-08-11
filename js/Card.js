@@ -1,4 +1,6 @@
 import { API_ENDPOINT } from "./Visit.js"
+import { VisitCardiologist, VisitDentist, VisitTherapist } from "./Visit.js"
+
 const token = "ae5a679d-9651-4426-93a4-29dc9de9d0e4"
 
 
@@ -118,7 +120,7 @@ function handleDoctorSelect() {
 
 // Створюємо кнопку «Відкрити модальний».
 const openModalBtn = document.createElement("button");
-openModalBtn.classList.add("new-visit")
+openModalBtn.classList.add("new-visit") 
 openModalBtn.textContent = "Створити візит";
 document.body.appendChild(openModalBtn);
 
@@ -175,24 +177,20 @@ function createCard(visitData) {
 // Функція, що обробляє подію натискання на кнопку "Створити"
 createBtn.addEventListener("click", () => {
     // Виконуємо необхідні дії для створення візиту
-    const visitData = {
-        doctor: doctorSelect.value,
-        purpose: purposeInput.value,
-        description: descriptionInput.value,
-        urgency: urgencySelect.value,
-        name: nameInput.value,
+    let visitData = {
+
     };
+    
 
     if (doctorSelect.value === "Кардіолог") {
-        visitData.pressure = pressureInput.value;
-        visitData.bmi = bmiInput.value;
-        visitData.heartDiseases = heartDiseasesInput.value;
-        visitData.age = ageInput.value;
+        visitData = new VisitCardiologist(doctorSelect.value, purposeInput.value, descriptionInput.value, urgencySelect.value, nameInput.value, pressureInput.value, bmiInput.value,heartDiseasesInput.value, ageInput.value)
+        
     } else if (doctorSelect.value === "Стоматолог") {
-        visitData.lastVisitDate = lastVisitDateInput.value;
+        visitData = new VisitDentist(doctorSelect.value, purposeInput.value, descriptionInput.value, urgencySelect.value, nameInput.value, lastVisitDateInput.value)
     } else if (doctorSelect.value === "Терапевт") {
-        visitData.age = ageInput.value;
+        visitData = new VisitTherapist(doctorSelect.value, purposeInput.value, descriptionInput.value, urgencySelect.value, nameInput.value, ageInput.value);
     }
+    console.log(visitData)
 
     // Отримуємо відповідь від сервера (постимо visitData як JSON)
     fetch(API_ENDPOINT, {

@@ -32,7 +32,7 @@ class Visit {
 }
 
 // Підклас для VisitDentist
-class VisitDentist extends Visit {
+export class VisitDentist extends Visit {
     constructor(doctor, purpose, description, urgency, name, lastVisitDate) {
         super(doctor, purpose, description, urgency, name);
         this.lastVisitDate = lastVisitDate;
@@ -58,7 +58,7 @@ class VisitDentist extends Visit {
 }
 
 // Підклас для VisitCardiologist
-class VisitCardiologist extends Visit {
+export class VisitCardiologist extends Visit {
     constructor(doctor, purpose, description, urgency, name, pressure, bmi, heartDiseases, age) {
         super(doctor, purpose, description, urgency, name);
         this.pressure = pressure;
@@ -90,7 +90,7 @@ class VisitCardiologist extends Visit {
 }
 
 // Підклас для VisitTherapist
-class VisitTherapist extends Visit {
+export class VisitTherapist extends Visit {
     constructor(doctor, purpose, description, urgency, name, age) {
         super(doctor, purpose, description, urgency, name);
         this.age = age;
