@@ -279,6 +279,10 @@ function authorization(data, ...optional) {
         .catch(error => console.log(error.message));
 }
 
+// //Создание карточки
+// createVisitButton.addEventListener('click', createVisitModal);
+
+
 //Смена кнопок
 function changeButton(show, hide) {
     if(hide.classList.contains('hide')) {
