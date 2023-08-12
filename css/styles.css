@@ -4,12 +4,11 @@
 
 body {
     margin: 0;
-    /* max-width: 1280px; */
+
 }
 
 .main-content {
     margin: 0;
-    /* max-width: 1280px; */
 }
 
 .container {
@@ -34,6 +33,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.title-logotype {
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+}
+
+.title-logo {
+    text-align: center;
 }
 
 .span1{
@@ -64,12 +73,10 @@ body {
 .visit-container {
     display: flex;
     gap: 10px;
-
 }
 
 .header__btn {
-    width: 150px;
-    padding: .5rem 1rem;
+    padding: 10px 16px;
     font-size: .875rem;
     border-radius: 6px;
     background-color: #007DF2;
@@ -77,11 +84,12 @@ body {
     transition: .15s;
     border: none;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .header__btn:hover {
     color: black;
-    border: solid 2px #c0bebe;
+    border: none;
     background-color: #e4e4e4;
 }
 
@@ -157,22 +165,19 @@ body {
 }
 
 .visit__field__default-text {
-    margin-left: -25px;
     display: flex;
     align-items: center;
-    font-size: 30px;
-    font-weight: 300;
+    font-size: 20px;
+    font-weight: 400;
     color: #212529;
+    text-transform: uppercase;
 }
 
 .visit__field__cards {
-    /* min-width: 50px; */
-    /* min-height: 100px; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-
     background-color: #fff;
     border: 1px solid #000;
     border-radius: 10px;
@@ -185,9 +190,8 @@ body {
 .show {
     display: block;
 }
- 
+
 /* .card{
-    /* width: 300px; */  */
     height: 250px;
     display: flex;
     justify-content: center;
@@ -201,7 +205,7 @@ body {
     position: relative;
     margin-right: 10px;
     margin-bottom: 10px;
-}
+} */
 
 .card-list {
     /* width: 100%; */
@@ -343,13 +347,13 @@ body {
 #search-btn {
     width: 250px;
     border: 1px solid #E2E2E2;
-    height: 30px;
+    height:33px;
 }
 
 #priority, #open-done {
     width: 250px;
     border: 1px solid #E2E2E2;
-    height: 30px;
+    height: 34px;
     color: #8E8E8E;
 }
 
