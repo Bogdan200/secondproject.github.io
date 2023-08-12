@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/visit.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="./img/favicon.svg">
+</head>
+
+<body class="page-body">
+    <header class="page-header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="#" class="header__logo">
+                    <img src="./img/Logo1.svg" alt="Logo">
+                </a>
+                <div class="title-logotype">
+                <h3 class="title-logo">Patient Cards</h3>
+                <span class="span1">Home <span class="span"> Patient Cards</span>
+                
+            </div>
+                <div class="visit-container">
+                    <button href="#" class="header__btn header__login" id="loginButton">Вхід</button>
+                <a href="#" class="header__btn header__create hide" id="createVisitButton">Створити візит</a>
+                <a href="#" id="exit"><img src="./img/Sign_out_squre_light.png" alt="exit"></a>
+            </div>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <section class="search__field container"></section>
+        <section class="visit__field">
+            <div class="container wrap">
+                <div class="visit__field__inner">
+                    <p class="visit__field__default-text">
+                    Поки немає записів
+                    </p>
+                </div>
+                <div class="card-container"></div>
+            </div>
+        </section>
+    </main>
+
+
+    <script type="module" src="./js/script.js"></script>
+    <script type="module" src="./js/Card.js"></script>
+</body>
+
+</html>
+
+

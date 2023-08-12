@@ -1,28 +1,28 @@
 const token = "ae5a679d-9651-4426-93a4-29dc9de9d0e4"
 
-fetch("https://ajax.test-danit.com/api/v2/cards", {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-    },
-    body: JSON.stringify({
-        title: 'Визит к кардиологу',
-        description: 'Плановый визит',
-        doctor: 'Cardiologist',
-        bp: '24',
-        age: 23,
-        weight: 70
-    })
-})
-    .then(response => response.json())
-    .then(response => console.log(response))
+// fetch("https://ajax.test-danit.com/api/v2/cards", {
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/json',
+//         'Authorization': `Bearer ${token}`
+//     },
+//     body: JSON.stringify({
+//         title: 'Визит к кардиологу',
+//         description: 'Плановый визит',
+//         doctor: 'Cardiologist',
+//         bp: '24',
+//         age: 23,
+//         weight: 70
+//     })
+// })
+//     .then(response => response.json())
+//     .then(response => console.log(response))
 
 
 
 const cardContainer = document.querySelector('.container')
 
-function deleteContent() {
+export function deleteContent() {
     console.log("delete action", this);
     const submitHandler = () => {
         this.divCard.remove()
@@ -66,7 +66,7 @@ class Card {
     }
 }
 
-class ArticleCard extends Card {
+export class ArticleCard extends Card {
     constructor(title, text, deleteF, editF, more) {
         super(deleteF, editF);
         this.title = title;
