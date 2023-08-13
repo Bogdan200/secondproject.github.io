@@ -230,3 +230,92 @@ createBtn.addEventListener("click", () => {
         })
         .catch((error) => console.error("Error creating visit:", error));
 });
+
+
+
+
+// При загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+    const token = "ae5a679d-9651-4426-93a4-29dc9de9d0e4"; // Запишем токен
+    if (sessionStorage.getItem('token')) {
+        changeButton(loginButton, createVisitButton);
+        fetchAndDisplayCards(token); // Отображение карточек с сервера
+        createFilter();
+    } else {
+        // Выполняем авторизацию с указанным токеном и учетными данными
+        const authData = {
+            email: 'medclinica@gmail.com',
+            password: '123456'
+        };
+        authorization(authData, token);
+    }
+});
+
+
+
+// Функция для получения и отображения карточек
+function fetchAndDisplayCards(token) {
+    fetch("https://ajax.test-danit.com/api/v2/cards", {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+    })
+        .then(response => response.json())
+        .then(cards => {
+            cards.forEach(cardData => {
+                createCard(cardData); // Создаем карточку на экране
+            });
+        })
+        .catch(error => console.error("Error fetching cards:", error));
+}
+
+// Функция для сохранения данных о карточках в Local Storage
+function saveCardsToLocalStorage(cards) {
+    localStorage.setItem('cards', JSON.stringify(cards));
+}
+
+// Функция для получения данных о карточках из Local Storage
+function getCardsFromLocalStorage() {
+    const savedCards = localStorage.getItem('cards');
+    return savedCards ? JSON.parse(savedCards) : [];
+}
+
+// При закрытии страницы сохраняем карточки в Local Storage
+window.addEventListener('beforeunload', () => {
+    const cards = document.querySelectorAll('.card');
+    const cardData = [];
+
+    cards.forEach(card => {
+        const visitName = card.querySelector('.visit-name').textContent;
+        const visitDoctor = card.querySelector('.visit-doctor').textContent;
+        const visitPurpose = card.querySelector('.visit-purpose').textContent;
+        const visitDescription = card.querySelector('.visit-description').textContent;
+        const visitUrgency = card.querySelector('.visit-urgency').textContent;
+       
+
+        const cardInfo = {
+            name: visitName,
+            doctor: visitDoctor,
+            purpose: visitPurpose,
+            description: visitDescription,
+            urgency: visitUrgency,
+           
+        };
+
+        cardData.push(cardInfo);
+    });
+
+    saveCardsToLocalStorage(cardData);
+});
+
+// При загрузке страницы получаем и отображаем карточки из Local Storage
+document.addEventListener('DOMContentLoaded', () => {
+    const savedCards = getCardsFromLocalStorage();
+    savedCards.forEach(cardData => {
+        createCard(cardData); // Создаем карточку на экране
+    });
+});
+
+
