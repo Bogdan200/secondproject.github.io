@@ -12,7 +12,7 @@ fetch("https://ajax.test-danit.com/api/v2/cards", {
     .then(response => response.json())
     .then(response => console.log(response))
 
-let id = 188031;
+let id = 188626;
 
 fetch(`https://ajax.test-danit.com/api/v2/cards/${id}`, {
     method: 'DELETE',
