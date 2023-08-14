@@ -13,7 +13,7 @@ fetch("https://ajax.test-danit.com/api/v2/cards", {
     .then(response => response.json())
     .then(response => console.log(response))
 
-    const id = 188021
+    const id = 188289
 
 
 fetch(`https://ajax.test-danit.com/api/v2/cards/${id}`, {
