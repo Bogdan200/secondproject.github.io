@@ -68,7 +68,7 @@ class Form {
     }
 
     create() {
-        this.form.classList.add('form');
+        this.form.classList.add('form-enter');
         return this.form;
     }
 }

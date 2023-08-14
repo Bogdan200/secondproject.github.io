@@ -263,13 +263,7 @@ body {
     right: 15px;
     top: 40px;
     color:rgba(0, 0, 0, .8);
-} */
-
-.form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+} 
 
 .email-label {
     text-align: center;
