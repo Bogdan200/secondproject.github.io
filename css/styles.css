@@ -165,6 +165,7 @@ body {
 }
 
 .visit__field__default-text {
+    margin-left: 100px;
     display: flex;
     align-items: center;
     font-size: 20px;
