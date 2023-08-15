@@ -1,25 +1,3 @@
-const token = "ae5a679d-9651-4426-93a4-29dc9de9d0e4"
-
-// fetch("https://ajax.test-danit.com/api/v2/cards", {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json',
-//         'Authorization': `Bearer ${token}`
-//     },
-//     body: JSON.stringify({
-//         title: 'Визит к кардиологу',
-//         description: 'Плановый визит',
-//         doctor: 'Cardiologist',
-//         bp: '24',
-//         age: 23,
-//         weight: 70
-//     })
-// })
-//     .then(response => response.json())
-//     .then(response => console.log(response))
-
-
-
 const cardContainer = document.querySelector('.container')
 
 export function deleteContent() {

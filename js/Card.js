@@ -2,24 +2,31 @@ import { API_ENDPOINT, VisitCardiologist, VisitDentist, VisitTherapist } from ".
 
 const token = "ae5a679d-9651-4426-93a4-29dc9de9d0e4"
 
-fetch("https://ajax.test-danit.com/api/v2/cards", {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-    },
-})
-    .then(response => response.json())
-    .then(response => console.log(response))
+let cards = [];
 
-let id = 188626;
 
-fetch(`https://ajax.test-danit.com/api/v2/cards/${id}`, {
-    method: 'DELETE',
-    headers: {
-        'Authorization': `Bearer ${token}`
-    },
-})
+async function getAllCards() {
+    await fetch("https://ajax.test-danit.com/api/v2/cards", {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+    })
+        .then(response => response.json())
+        .then(data => {
+            cards = data;
+            console.log(data);
+            if (cards.length > 0) {
+                document.getElementById('visit__field').remove() ;
+                cards.forEach(card => {
+                    console.log(card);
+                    createCard(card)
+                })
+            }
+        })
+}
+getAllCards()
 
 // Створюємо випадаючий список з опціями лікарів
 const doctorSelect = document.createElement("select");
@@ -230,3 +237,4 @@ createBtn.addEventListener("click", () => {
         })
         .catch((error) => console.error("Error creating visit:", error));
 });
+
