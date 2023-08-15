@@ -30,7 +30,7 @@ async function getAllCards() {
 }
 getAllCards()
 
-// let id = 188758;
+// let id = 188770;
 
 // fetch(`https://ajax.test-danit.com/api/v2/cards/${id}`, {
 //     method: 'DELETE',
