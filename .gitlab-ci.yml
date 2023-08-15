@@ -1,6 +1,4 @@
-image: openjdk:8
-
-pages: # название таски
+pages: 
   stage: deploy
   script:
     - ./gradlew bundle
@@ -8,8 +6,8 @@ pages: # название таски
     - cp -r src/main/web/* .public
     - cp -r build/bundle/* .public
     - mv .public public
-  artifacts: # необходимый артефакт
+  artifacts: 
     paths:
       - public
-  only: # собирать только из ветки мастера
+  only: 
     - master
