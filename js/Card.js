@@ -28,14 +28,14 @@ async function getAllCards() {
 }
 getAllCards()
 
-let id = 188671;
+// let id = 188674;
 
-fetch(`https://ajax.test-danit.com/api/v2/cards/${id}`, {
-    method: 'DELETE',
-    headers: {
-        'Authorization': `Bearer ${token}`
-    },
-})
+// fetch(`https://ajax.test-danit.com/api/v2/cards/${id}`, {
+//     method: 'DELETE',
+//     headers: {
+//         'Authorization': `Bearer ${token}`
+//     },
+// })
 
 // Створюємо випадаючий список з опціями лікарів
 const doctorSelect = document.createElement("select");
