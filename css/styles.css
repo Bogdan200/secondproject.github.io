@@ -7,6 +7,8 @@ body {
 
 }
 
+
+
 .main-content {
     margin: 0;
 }
@@ -37,6 +39,13 @@ body {
     border: none;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: auto;
 }
 
 .more-info:hover{
@@ -394,8 +403,10 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
+    padding-bottom: 30px;
     padding-left: 50px;
     padding-right: 50px;
+    border-bottom: 1px solid #E2E2E2 ;
 }
 
 #search-input {
