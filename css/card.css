@@ -4,10 +4,6 @@
 .album{
     padding-top: 20px;
 }
-.container{
-    max-width: 1140px;
-    margin: auto;
-}
 
 .card {
     display: inline-block;

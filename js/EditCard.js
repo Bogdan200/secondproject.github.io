@@ -1,4 +1,4 @@
-const cardContainer = document.querySelector('.container')
+const cardContainer = document.querySelector('.container-album')
 
 export function deleteContent() {
     console.log("delete action", this);

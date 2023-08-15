@@ -345,6 +345,6 @@ document.addEventListener('DOMContentLoaded', function () {
         sessionStorage.removeItem('authToken');
 
         // Перенаправить пользователя на страницу входа или на другую нужную страницу
-        window.location.href = 'login.html';
+        window.location.href = 'https://ajax.test-danit.com/front-pages/cards-register.html';
     });
 });

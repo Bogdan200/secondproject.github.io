@@ -18,7 +18,7 @@ async function getAllCards() {
             cards = data;
             console.log(data);
             if (cards.length > 0) {
-                document.getElementById('visit__field').remove() ;
+                document.getElementById('visit__field').remove()
                 cards.forEach(card => {
                     console.log(card);
                     createCard(card)
@@ -27,6 +27,15 @@ async function getAllCards() {
         })
 }
 getAllCards()
+
+let id = 188671;
+
+fetch(`https://ajax.test-danit.com/api/v2/cards/${id}`, {
+    method: 'DELETE',
+    headers: {
+        'Authorization': `Bearer ${token}`
+    },
+})
 
 // Створюємо випадаючий список з опціями лікарів
 const doctorSelect = document.createElement("select");
