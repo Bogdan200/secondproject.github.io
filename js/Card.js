@@ -30,7 +30,7 @@ async function getAllCards() {
 }
 getAllCards()
 
-// let id = 188677;
+// let id = 188758;
 
 // fetch(`https://ajax.test-danit.com/api/v2/cards/${id}`, {
 //     method: 'DELETE',
@@ -247,7 +247,7 @@ function createCard(visitData) {
     }
     deleteCard()
 
-    function editCard() {
+    async function editCard() {
         const editBtns = document.querySelectorAll('.edit-btn')
         editBtns.forEach((editBtn) => {
             editBtn.addEventListener('click', () => {
