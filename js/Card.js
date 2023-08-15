@@ -28,7 +28,7 @@ async function getAllCards() {
 }
 getAllCards()
 
-// let id = 188675;
+// let id = 188676;
 
 // fetch(`https://ajax.test-danit.com/api/v2/cards/${id}`, {
 //     method: 'DELETE',
