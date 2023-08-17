@@ -19,7 +19,7 @@ class Modal {
         this.modalCloser.textContent = String.fromCharCode(0x2716);
         this.modalCloser.addEventListener('click', (e) => {
             e.preventDefault();
-            if(this.modal.classList.contains('modal--open')) {
+            if (this.modal.classList.contains('modal--open')) {
                 this.modal.classList.remove('modal--open');
                 this.modal.remove();
             }
@@ -34,14 +34,14 @@ class Modal {
 
 
     close() {
-        if(this.modal.classList.contains('modal--open')) {
+        if (this.modal.classList.contains('modal--open')) {
             this.modal.classList.remove('modal--open');
             this.modal.remove();
         }
     }
 
     open() {
-        if(!this.modal.classList.contains('modal--open')) {
+        if (!this.modal.classList.contains('modal--open')) {
             this.modal.classList.add('modal--open');
         }
     }
@@ -84,19 +84,19 @@ class Input {
 
     baseAttr(type = 'text', id = '', value = '', placeholder = '', required = '', name = '') {
         this.input.setAttribute('type', type);
-        if(id) this.input.setAttribute('id', id);
-        if(value) this.input.setAttribute('value', value);
-        if(placeholder) this.input.setAttribute('placeholder', placeholder);
-        if(required) this.input.setAttribute('required', required);
-        if(name) this.input.setAttribute('name', name);
+        if (id) this.input.setAttribute('id', id);
+        if (value) this.input.setAttribute('value', value);
+        if (placeholder) this.input.setAttribute('placeholder', placeholder);
+        if (required) this.input.setAttribute('required', required);
+        if (name) this.input.setAttribute('name', name);
     }
 
     error() {
         const errorSpan = document.createElement("span");
         errorSpan.classList.add('errSpan');
         errorSpan.textContent = 'Невірно заповнено поле!';
-        if(!this.input.value.trim()) {
-            if(this.input.nextElementSibling.classList.contains('errSpan')) {
+        if (!this.input.value.trim()) {
+            if (this.input.nextElementSibling.classList.contains('errSpan')) {
                 this.input.classList.remove('errInput');
                 this.input.nextElementSibling.remove();
             }
@@ -104,7 +104,7 @@ class Input {
             this.input.after(errorSpan);
         }
         this.input.addEventListener('blur', () => {
-            if(this.input.value.trim()) {
+            if (this.input.value.trim()) {
                 this.input.classList.remove('errInput');
                 this.input.nextElementSibling.remove();
             }
@@ -117,7 +117,7 @@ class Input {
 
     label(text = '', initClass = '') {
         const label = document.createElement('label');
-        if(initClass) label.classList.add(initClass);
+        if (initClass) label.classList.add(initClass);
         label.setAttribute('for', this.input.id);
         label.textContent = text;
         this.input.parentElement.insertBefore(label, this.input);
@@ -142,15 +142,15 @@ class TextArea {
     }
 
     baseAttr(id = '', value = '', placeholder = '', required = '') {
-        if(id) this.textarea.setAttribute('id', id);
-        if(value) this.textarea.setAttribute('value', value);
-        if(placeholder) this.textarea.setAttribute('placeholder', placeholder);
-        if(required) this.textarea.setAttribute('required', required);
+        if (id) this.textarea.setAttribute('id', id);
+        if (value) this.textarea.setAttribute('value', value);
+        if (placeholder) this.textarea.setAttribute('placeholder', placeholder);
+        if (required) this.textarea.setAttribute('required', required);
     }
 
     label(text = '', initClass = '') {
         const label = document.createElement('label');
-        if(initClass) label.classList.add(initClass);
+        if (initClass) label.classList.add(initClass);
         label.setAttribute('for', this.textarea.id);
         label.textContent = text;
         this.textarea.parentElement.insertBefore(label, this.textarea);
@@ -176,15 +176,15 @@ class Select {
 
     addOption(text = '', value = '') {
         const option = document.createElement('option');
-        if(text) option.textContent = text;
-        if(value) option.setAttribute('value', value);
+        if (text) option.textContent = text;
+        if (value) option.setAttribute('value', value);
         this.select.append(option);
         return option;
     }
 
     baseAttr(id = '', disabled = false) {
-        if(id) this.select.setAttribute('id', id);
-        if(disabled) this.select.setAttribute('disabled', disabled);
+        if (id) this.select.setAttribute('id', id);
+        if (disabled) this.select.setAttribute('disabled', disabled);
     }
 
     label(text = '') {
@@ -202,7 +202,6 @@ class Select {
         this.select.value = newValue;
     }
 }
-
 
 //Переменные
 
@@ -239,7 +238,7 @@ function logInModal(e) {
 
     loginSubmit.event('click', (e) => {
         e.preventDefault();
-        if(!loginEmail.value.trim() || !loginPassword.value.trim()) {
+        if (!loginEmail.value.trim() || !loginPassword.value.trim()) {
             loginEmail.error();
             loginPassword.error();
             return;
@@ -254,16 +253,16 @@ function getAuthorizationData(email, password, ...optional) {
         email: email.value,
         password: password.value,
     };
-    if(data.email && data.password) {
+    if (data.email && data.password) {
         authorization(data, ...optional);
     }
 }
 
 //Авторизация
 function authorization(data, ...optional) {
-    sendRequest(loginURL,'POST', data)
+    sendRequest(loginURL, 'POST', data)
         .then(response => {
-            if(response.status >= 200 && response.status <= 399) {
+            if (response.status >= 200 && response.status <= 399) {
                 return response.text()
             }
             else {
@@ -285,37 +284,12 @@ function authorization(data, ...optional) {
 
 //Смена кнопок
 function changeButton(show, hide) {
-    if(hide.classList.contains('hide')) {
+    if (hide.classList.contains('hide')) {
         hide.classList.remove('hide');
         show.classList.add('hide');
     }
 }
 
-//Отправка отредактированных данных на сервер
-function editData(data, id) {
-    sendRequest(generalUrl + `/${id}`, method = 'PUT', data)
-        .then(response => response.json())
-        .then(data => {
-            sessionStorage.setItem(data.id, JSON.stringify(data.content));
-            buildShowCard(data.content, data.id);
-            const oldCard = document.getElementById(id);
-            const newCard = visitField.lastElementChild;
-            oldCard.replaceWith(newCard);
-            oldCard.remove();
-        })
-        .catch(error => console.log(error.message));
-}
-
-//Получение данных и отправка на сервер
-function getCardData(data) {
-    sendRequest(generalUrl, method = 'POST', data)
-        .then(response => response.json())
-        .then(data => {
-            sessionStorage.setItem(data.id, JSON.stringify(data.content))
-            buildShowCard(data.content, data.id);
-        })
-        .catch(error => console.log(error.message));
-}
 
 function createFilter() {
     const searchField = document.querySelector('.search__field');
@@ -359,25 +333,23 @@ function sendRequest(url, method = 'GET', body) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    if(sessionStorage.getItem('token')) {
+    if (sessionStorage.getItem('token')) {
         changeButton(loginButton, createVisitButton);
         for (const key in sessionStorage) {
-            if(!isNaN(Number(key))) {
+            if (!isNaN(Number(key))) {
                 buildShowCard(JSON.parse(sessionStorage.getItem(key)), key);
             }
         }
         createFilter();
     }
 });
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('exit').addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('exit').addEventListener('click', function () {
         // Очистить данные авторизации (удалить токен из Session Storage)
         sessionStorage.removeItem('authToken');
-        
+
         // Перенаправить пользователя на страницу входа или на другую нужную страницу
-        window.location.href = 'login.html';
+        window.location.href = 'https://ajax.test-danit.com/front-pages/cards-register.html';
     });
 });
-
-
 

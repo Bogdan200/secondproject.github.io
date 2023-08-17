@@ -7,6 +7,8 @@ body {
 
 }
 
+
+
 .main-content {
     margin: 0;
 }
@@ -25,6 +27,73 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+.more-info{
+    padding: 10px 16px;
+    font-size: .875rem;
+    border-radius: 6px;
+    background-color: #007DF2;
+    color: #fff;
+    transition: .15s;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.more-info:hover{
+    color: black;
+    border: none;
+    background-color: #e4e4e4;
+}
+
+.hidden-div{
+    display: none;
+}
+.hidden-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.del-btn{
+    display: block;
+    width: 180px;
+    height: 48px;
+    background-color: #444444;
+    border-radius: 8px;
+    color: #FFFFFF;
+    border: none;
+    font-family: 'Manrope', sans-serif;
+    transition: .15s
+}
+.del-btn:hover{
+    color: black;
+    border: none;
+    background-color: #e4e4e4;
+  
+}
+.edit-btn{
+    display: block;
+    width: 180px;
+    height: 48px;
+    background-color: #007DF2;
+    border-radius: 8px;
+    color: #FFFFFF;
+    border: none;
+    font-family: 'Manrope', sans-serif;
+    transition: .15s
+}
+.edit-btn:hover{
+    color: black;
+    border: none;
+    background-color: #e4e4e4;
+    transition: .15s
 }
 
 .header__logo {
@@ -165,6 +234,7 @@ body {
 }
 
 .visit__field__default-text {
+    margin-left: 100px;
     display: flex;
     align-items: center;
     font-size: 20px;
@@ -263,7 +333,13 @@ body {
     right: 15px;
     top: 40px;
     color:rgba(0, 0, 0, .8);
-} 
+} */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .email-label {
     text-align: center;
@@ -304,7 +380,6 @@ body {
     text-transform: uppercase;
     margin: 0;
     margin-bottom: 15px;
-
 }
 
 .createVisit-title {
@@ -328,8 +403,10 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
+    padding-bottom: 30px;
     padding-left: 50px;
     padding-right: 50px;
+    border-bottom: 1px solid #E2E2E2 ;
 }
 
 #search-input {
